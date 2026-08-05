@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="upload-container">
+
+    <h2 class="mb-4">🌿 AI Plant Disease Detector</h2>
+
+    <!-- Drag & Drop Area -->
+    <form action="/upload/" method="POST" enctype="multipart/form-data" id="uploadForm">
+
+        <div class="drop-zone" id="dropZone">
+            <p>📂 Drag & Drop Leaf Image Here</p>
+            <p>or</p>
+            <input type="file" name="img" id="fileInput" hidden required>
+            <button type="button" class="btn btn-success" onclick="fileInput.click()">Browse</button>
+        </div>
+
+        <!-- Preview -->
+        <div class="preview-card d-none" id="previewCard">
+            <img id="preview" class="preview-img">
+        </div>
+
+        <!-- Loader -->
+        <div class="loader d-none" id="loader"></div>
+
+        <button type="submit" class="btn btn-success mt-3">Predict</button>
+
+    </form>
+</div>
+
+{% if result %}
+<div class="result-container">
+
+    <h3>🔍 Prediction Result</h3>
+
+    <img src="{{ imagepath }}" class="result-img">
+
+    <h4 class="mt-3 text-success">{{ prediction }}</h4>
+    <p>Confidence: <strong>{{ confidence }}%</strong></p>
+
+    <!-- Top 3 Predictions -->
+    {% if top3 %}
+    <div class="top3-box">
+        <h5>Top 3 Predictions</h5>
+        <ul>
+            {% for item in top3 %}
+            <li>{{ item.label }} — {{ item.confidence }}%</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    <!-- Disease Info -->
+    {% if info %}
+    <div class="info-box">
+        <h5>🩺 About Disease</h5>
+        <p>{{ info }}</p>
+    </div>
+    {% endif %}
+
+</div>
+{% endif %}
+
+{% endblock %}

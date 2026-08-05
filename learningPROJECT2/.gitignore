@@ -1,0 +1,12 @@
+# Ignore large ML model
+*.keras
+
+# Python cache
+__pycache__/
+*.pyc
+
+# VS Code settings
+.vscode/
+
+# Uploaded images
+uploadedImages/

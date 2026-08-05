@@ -1,0 +1,1 @@
+c:\Users\chinn\Downloads\plant_disease_recog_model_pwp.keras

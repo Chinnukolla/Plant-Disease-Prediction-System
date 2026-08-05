@@ -1,0 +1,74 @@
+body {
+    background: linear-gradient(to right, #e8f5e9, #f1f8e9);
+    font-family: Arial, sans-serif;
+}
+
+/* Upload Container */
+.upload-container {
+    text-align: center;
+}
+
+/* Drag & Drop */
+.drop-zone {
+    border: 2px dashed #2e7d32;
+    padding: 40px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.drop-zone:hover {
+    background: #e8f5e9;
+}
+
+/* Preview */
+.preview-card {
+    margin-top: 20px;
+}
+
+.preview-img {
+    max-width: 250px;
+    border-radius: 10px;
+}
+
+/* Loader */
+.loader {
+    margin: 20px auto;
+    border: 6px solid #eee;
+    border-top: 6px solid #2e7d32;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+/* Result */
+.result-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.result-img {
+    max-width: 300px;
+    border-radius: 10px;
+}
+
+/* Top 3 */
+.top3-box {
+    margin-top: 20px;
+    padding: 15px;
+    background: #ffffff;
+    border-radius: 10px;
+}
+
+/* Info Box */
+.info-box {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f1f8e9;
+    border-radius: 10px;
+}

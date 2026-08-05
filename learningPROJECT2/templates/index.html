@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="text-center">
+    <h1 class="mb-4">🌿 Plant Disease Detection</h1>
+    <p class="lead">Upload a plant leaf and detect diseases using AI</p>
+
+    <a href="/home/" class="btn btn-success mt-3">Start Detection</a>
+
+    <div class="mt-4">
+        <img src="{{ url_for('static', filename='images/hero.jpg') }}" class="img-fluid hero-img">
+    </div>
+</div>
+
+{% endblock %}
